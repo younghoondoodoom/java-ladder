@@ -69,6 +69,6 @@ public class LayerTest {
         layer.move(location);
 
         //then
-        assertThat(location.getHorizon()).isEqualTo(result);
+        assertThat(location.getLocation()).isEqualTo(result);
     }
 }

@@ -16,7 +16,7 @@ public class Location {
         location++;
     }
 
-    public int getHorizon() {
+    public int getLocation() {
         return location;
     }
 }

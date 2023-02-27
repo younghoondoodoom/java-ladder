@@ -54,11 +54,11 @@ public class Layer {
     }
 
     private boolean moveInEnds(final Location location) {
-        if (location.getHorizon() == 0) {
+        if (location.getLocation() == 0) {
             judgeRight(location);
             return true;
         }
-        if (location.getHorizon() == lines.size()) {
+        if (location.getLocation() == lines.size()) {
             judgeLeft(location);
             return true;
         }
@@ -80,15 +80,15 @@ public class Layer {
     }
 
     private Line findRightLines(final Location location) {
-        return lines.get(location.getHorizon());
+        return lines.get(location.getLocation());
     }
 
     private Line findLeftLines(final Location location) {
-        return lines.get(location.getHorizon() - LOCATION_DIFFERENCE);
+        return lines.get(location.getLocation() - LOCATION_DIFFERENCE);
     }
 
     private void checkLocation(final Location location) {
-        if (location.getHorizon() > lines.size()) {
+        if (location.getLocation() > lines.size()) {
             throw new IllegalArgumentException(LOCATION_NOT_EXIST);
         }
     }

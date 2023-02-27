@@ -35,11 +35,11 @@ public class Ladder {
         checkStartLocation(location);
         IntStream.range(0, height.getValue())
             .forEach(index -> layers.get(index).move(location));
-        return location.getHorizon();
+        return location.getLocation();
     }
 
     private void checkStartLocation(final Location location) {
-        if (location.getHorizon() > width.getValue() + 1) {
+        if (location.getLocation() > width.getValue() + 1) {
             throw new IllegalArgumentException(START_LOCATION_NOT_EXIST);
         }
     }
